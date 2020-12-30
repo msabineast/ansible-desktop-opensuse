@@ -5,7 +5,10 @@
   tasks:
   - name: Install usual programs
     zypper:
-      name: htop
-      name: rclone
-      name: steam
-      name: discord
+      name:
+        - htop
+        - rclone
+        - steam
+        - discord
+        - mc
+
