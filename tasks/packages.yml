@@ -1,0 +1,9 @@
+- name: Install usual programs
+  zypper:
+    name:
+      - htop
+      - rclone
+      - steam
+      - discord
+      - mc
+

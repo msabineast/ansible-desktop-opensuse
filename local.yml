@@ -1,14 +1,12 @@
-- hosts: localhost #this line states which hosts we want to run ansible against
-  connection: local #ansible defaults to ssh, but we want to run this locally
-  become: true # sudo essentially
+- hosts: localhost
+  connection: local
+  become: true
+
+  pre_tasks:
+    - name: update repsitories
+      zypper:
+        update_cache: yes
+      changed_when: false
 
   tasks:
-  - name: Install usual programs
-    zypper:
-      name:
-        - htop
-        - rclone
-        - steam
-        - discord
-        - mc
-
+    - include: tasks/packages.yml
